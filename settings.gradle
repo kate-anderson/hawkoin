@@ -1,0 +1,3 @@
+rootProject.name = 'hawkoin'
+rootProject.buildFileName = 'build.gradle.kts'
+
