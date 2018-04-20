@@ -30,6 +30,8 @@ repositories {
 
 dependencies {
     compile(kotlinModule("stdlib-jdk8", kotlin_version))
+    compile 'io.javalin:javalin:1.5.0'
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+"
     testCompile("junit", "junit", "4.12")
 }
 

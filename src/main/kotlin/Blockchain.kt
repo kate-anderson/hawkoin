@@ -9,6 +9,15 @@ object Blockchain {
         chain.add(Block(0,"0","Genesis Block",0))
     }
 
+    fun mineBlock(data:Any):Block{
+        val proofOfWork = generatePOW(latestBlock.proofOfWork)
+        val block = Block(chain.size, latestBlock.hash,data,proofOfWork)
+
+        addNewBlock(block)
+
+        return latestBlock
+    }
+
     fun addNewBlock(block:Block){
         if (isNewBlockValid(block))chain.add(block)
     }
