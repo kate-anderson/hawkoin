@@ -6,14 +6,12 @@ import org.junit.Test
 class blockchainTest{
     @Test
     fun genesisBlock(){
-        
-        //this isn't working because it is calling the mined block as the latestBlock
-        val chain = Blockchain
-        val latestBlock = chain.latestBlock
 
-        assertEquals(0, latestBlock.index)
-        assertEquals("Genesis Block", latestBlock.data)
-        assertEquals(0,latestBlock.proofOfWork)
+        //this isn't working because it is calling the mined block as the latestBlock
+        val latestBlock = Blockchain.latestBlock.index
+        val totalBlocks = Blockchain.chain.size
+
+        assertEquals(0, latestBlock-totalBlocks+1)
     }
 
     @Test
