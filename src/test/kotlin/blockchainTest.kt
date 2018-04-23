@@ -29,4 +29,17 @@ class blockchainTest{
         assertNotNull(minedBlock.hash)
         assertNotNull(minedBlock.timestamp)
     }
+
+    @Test
+    fun addBlock(){
+        val chain = Blockchain
+        val lastBlock = chain.latestBlock
+        val newBlock = Block(chain.latestBlock.index+1,chain.latestBlock.hash,"transaction",0)
+        chain.addNewBlock(newBlock)
+
+        assertEquals(newBlock,chain.latestBlock)
+        assertEquals(newBlock.previousHash, lastBlock.hash)
+        assertNotNull(newBlock.hash)
+        assertNotNull(newBlock.timestamp)
+    }
 }
